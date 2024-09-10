@@ -1,0 +1,49 @@
+@media screen and (max-width: 1200px) {
+    #main-nav {
+      display: none;
+    }
+    #hamburger-nav {
+      display: flex;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .experience-timeline{
+        margin: 50px auto;
+    }
+    .exp-timeline::after{
+        left:32px;
+    }
+    .exp-container{
+        width: 100%;
+        padding-left:80px;
+        padding-right: 25px;
+    }
+    .text-box{
+        font-size: 12px;
+    }
+    .text-box small{
+        margin-bottom: 10px;
+    }
+    .exp-container-right{
+        left: 0;
+    }
+    .exp-container-right, .exp-container img{
+        left:10px;
+    }
+    .left-container-arrow, .right-container-arrow{
+        border-right: 15px solid black;
+        border-left:0;
+        left: -16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tab-contents ul li {
+        font-size: 14px; /* Reduce font size on smaller screens */
+    }
+
+    .tab-contents p.section_text_about {
+        font-size: 16px; /* Adjust font size for better readability on small screens */
+    }
+}

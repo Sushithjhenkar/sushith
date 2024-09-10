@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushith Jhenkar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaques.css">
+</head>
+<body>
+    <script src="script.js"></script>
+    <nav id="main-nav">
+            <a href="#home" class="logo"><img src="./assets/logo.png" alt="Name Logo"></a>
+        <div>
+            <ul class="nav-head">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">
+            Sushith S Jhenkar
+        </div>
+        <div class="hamburger-menu"></div>
+        <div class="hamburger-icon" onclick="togglemenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-heads">
+            <li><a href="#" onclick="togglemenu()">Home</a></li>
+            <li><a href="#about" onclick="togglemenu()">About</a></li>
+            <li><a href="#experience" onclick="togglemenu()">Experience</a></li>
+            <li><a href="#projects" onclick="togglemenu()">Projects</a></li>
+            <li><a href="#contact" onclick="togglemenu()">Contact</a></li>
+        </div>
+    </nav>
+    <section id="profile">
+        <div class="profile_pic">
+            <img src="./assets/profile.jpg" alt="Sushith S Jhenkar Profile Picture">
+        </div>
+        <div class="section_text">
+            <p class="section_text_p1">Hello, I'm</p>
+            <h1 class="name_title">Sushith S Jhenkar</h1>
+            <p class="section_text_p2">Software Engineer</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/')"> Download CV</button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'"> Hire Me</button>
+            </div>
+            <div id="socials">
+                <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onclick="window.open('https://www.linkedin.com/in/sushithjhenkar','_blank')">
+                <img src="./assets/github.png" alt="My Github Profile" class="icon" onclick="window.open('https://github.com/Sushithjhenkar','_blank')">
+                <img src="./assets/mail.png" alt="My Email" class="icon" onclick="window.open('mailto:sushithjhenkar@gmail.com','_blank')">
+                <a href="tel:+15612607215" target="_blank"><img src="./assets/call.png" alt="Call me" class="icon"></a>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow" class="icon-1" onclick="location.href='./#about'">
+    </section>
+    <section id="about">
+        <div class="about-col-2">
+            <p class="section_text_p1">Get to know more</p>
+            <h1 class="name_title">About me</h1>
+            <p class="section_text_about">I am a dedicated Computer Science engineer with a strong foundation in software development and a focus on data management and integration. Known for my quick learning, problem-solving skills, and commitment to delivering high-quality results, I approach challenges with creativity, enthusiasm, and determination. Continuous learning and striving for excellence define my professional journey.</p>
+            <div class="tab-titles">
+                <img class="edu-icon" src="./assets/education.png" alt="Education">
+                <p class="tag-links active-link" onclick="opentab('education')">Education</p>
+                <img class="edu-icon" src="./assets/skills.png" alt="Skills">
+                <p class="tag-links" onclick="opentab('skills')">Skills</p>
+            </div>
+            <div class="tab-contents active-tab" id="education">
+                <p class="section_text_about" style="margin-bottom: 20px;">With a solid foundation in Computer Science and currently pursuing a Master’s degree at Florida Atlantic University, I'm deepening my expertise in areas like Deep Learning, AI, NLP, DBMS, and Cloud Computing.</p>
+                <ul>
+                    <li><span><b>Florida Atlantic University</b></span><br>Masters in Computer Science*
+                    <span style="display: block;">Aug 2023 - May 2025</span>
+                    <span style="display: block;">GPA: 3.77/ 4</span></li>
+                    <li><span><b>Visvesvaraya Technological University</b></span><br>Bachelors in Computer Science
+                    <span style="display: block;">Aug 2017 - Aug 2021 </span>
+                    <span style="display: block;">GPA: 7.82/ 10</span></li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="skills">
+                <p class="section_text_about" style="display: inline;">These are the areas where I apply my experise to address complex challenges</p>
+                <ul>
+                   <li>Python</li>
+                   <li>HTML</li>
+                   <li>CSS</li>
+                   <li>R</li>
+                </ul>
+            </div>
+            <script>
+                var tablinks = document.getElementsByClassName('tag-links');
+                var tabcontents = document.getElementsByClassName('tab-contents');
+                function opentab(tab){
+                for(tl of tablinks){
+                    tl.classList.remove("active-link");
+                }
+                for(tc of tabcontents){
+                    tc.classList.remove("active-tab")
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tab).classList.add("active-tab");
+                }
+            </script>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow" class="icon arrow" onclick="location.href='./#experience'">
+    </section>
+    <section id="experience">
+            <p class="section_text_p1">Journey through my</p>
+            <h1 class="name_title">Career</h1>
+            <div class="experience-timeline">
+                <div class="exp-container-right">
+                    <img src="./assets/tcs.jpg" alt="Tata Consultancy Services">
+                    <div class="text-box">
+                        <h2 style="padding: auto;text-align: center;">Tata Consultancy Services</h2>
+                        <h3 style="padding: 0.4rem;text-align: center;">Assistant System Engineer</h3>
+                        <small style="padding: 0.2rem;display:block;text-align:center;">Aug 2021 - May 2023</small>
+                        <ul>
+                        <li>Applied <b>Agile</b> methodologies to enhance team collaboration and facilitate the delivery of robust, high-quality software
+                            solutions. This contributed to a <b>40%</b> increase in project completion efficiency.</li>
+                        <li>Conducted comprehensive testing by examining user requirements, ensuring program functionality, and achieving a
+                            <b>98%</b> performance success rate against established targets.</li>
+                        <li>Collaborated closely with a cross-functional team of developers and business analysts to gather testing requirements
+                            and design effective test scenarios for <b>Citibank's</b> data integration within the <b>Salesforce platform</b>.</li>
+                        </ul>
+                        <span class="left-container-arrow"></span>
+                    </div>
+                </div>
+                <div class="exp-container">
+                    <img src="./assets/ic.jpg" alt="">
+                    <div class="text-box">
+                        <h2 style="padding: auto;text-align: center;">IC Solutions</h2>
+                        <h3 style="padding: 0.4rem;text-align: center;">Machine Learning Intern</h3>
+                        <small style="padding: 0.2rem;display:block;text-align:center;">Sep 2020 - Oct 2020</small>
+                        <ul>
+                        <li>Conducted exploratory <b>data analysis</b> on a dataset of <b>10,000</b> automobile records and extracted relevant information for
+                            training a regression model.</li>
+                        <li>Presented findings and model comparisons, leading to the selection of the Gradient Boosting Regression model as the
+                            best fit due to its highest R-squared value and the lowest MSE, improving price prediction accuracy by <b>20%</b>.</li>
+                        </ul>
+                        <span class="right-container-arrow"></span>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/arrow.png" alt="Arrow" class="left-arrow" onclick="location.href='./#projects'">
+    </section>
+    <section id="projects">
+        <p class="section_text_p1">Explore my</p>
+        <h1 class="name_title">Work and Projects</h1>
+        <div class=""></div>
+    </section>
+</body>
+</html>
