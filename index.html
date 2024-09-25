@@ -71,6 +71,8 @@
                 <p class="tag-links active-link" onclick="opentab('education')">Education</p>
                 <img class="edu-icon" src="./assets/skills.png" alt="Skills">
                 <p class="tag-links" onclick="opentab('skills')">Skills</p>
+                <img class="edu-icon" src="./assets/research.png" alt="Research">
+                <p class="tag-links" onclick="opentab('research')">Academic Research</p>
             </div>
             <div class="tab-contents active-tab" id="education">
                 <p class="section_text_about" style="margin-bottom: 20px;">With a solid foundation in Computer Science and currently pursuing a Master’s degree at Florida Atlantic University, I'm deepening my expertise in areas like Deep Learning, AI, NLP, DBMS, and Cloud Computing.</p>
@@ -126,7 +128,12 @@
                     <span class="skill-name">Machine Learning</span>
                 </div>
             </div>
-            <script>
+            <div class="tab-contents" id="research">
+                <h2 class="section_text_about">COVI-Assist: Automatic COVID-19 Detection from Chest X-Ray Images</h2>
+                <p class="section_text_about">COVI-Assist is a machine learning model that uses deep learning techniques to detect COVID-19 from chest X-ray images. The model is trained on a large dataset of chest X-ray images and is capable of accurately identifying COVID-19 cases with high accuracy rates. This research project aims to develop a more efficient and accurate Computer aided detection system for COVID-19 using chest X-ray images.</p>
+                <button class="btn-color-3" onclick="window.open('https://www.ijraset.com/best-journal/covi-assist-automatic-covid19-detection-from-chest-xrays', '_blank')">Read More</button>
+            </div>
+            <script> 
                 var tablinks = document.getElementsByClassName('tag-links');
                 var tabcontents = document.getElementsByClassName('tab-contents');
                 function opentab(tab){
@@ -185,7 +192,22 @@
     <section id="projects">
         <p class="section_text_p1">Explore my</p>
         <h1 class="name_title">Work and Projects</h1>
-        <div class=""></div>
+        <div class="work-list">
+            <div class="work">
+                <img src="./assets/covid19.png" alt="Work 1">
+                <div class="layer">
+                    <h3>COVID-19 Detection using Chest X-Ray</h3>
+                    <p>Developed a machine learning model to detect COVID-19 using chest X-ray images.</p>
+                    <a href="https://github.com/Sushithjhenkar/COVID-19-Detection-using-Chest-X-Ray" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="./assets/bakery.png" alt="Work 2">
+            </div>
+            <div class="work">
+                <img src="./assets/food-donation.png" alt="Work 3">
+            </div>
+        </div>
     </section>
 </body>
 </html>
