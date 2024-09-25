@@ -47,3 +47,29 @@
         font-size: 16px; /* Adjust font size for better readability on small screens */
     }
 }
+
+@media (max-width: 768px) {
+    .skill-logo-container {
+      width: 80px; /* Smaller size for medium screens */
+      height: 80px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .skill-logo-container {
+      width: 60px; /* Even smaller size for small screens */
+      height: 60px;
+      margin: 5px;
+    }
+    
+    /* Adjust hover effect for small screens to avoid overlap */
+    .skill-logo-container:hover {
+      transform: scale(1.1); /* Slightly smaller enlargement */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+    
+    .skill-name {
+      bottom: -20px; /* Adjust position for smaller container */
+      font-size: 0.8em; /* Smaller font size */
+    }
+  }
