@@ -40,36 +40,78 @@
 
 @media (max-width: 768px) {
     .tab-contents ul li {
-        font-size: 14px; /* Reduce font size on smaller screens */
+        font-size: 14px;
     }
 
     .tab-contents p.section_text_about {
-        font-size: 16px; /* Adjust font size for better readability on small screens */
+        font-size: 16px; 
     }
 }
 
 @media (max-width: 768px) {
     .skill-logo-container {
-      width: 80px; /* Smaller size for medium screens */
+      width: 80px;
       height: 80px;
     }
   }
   
   @media (max-width: 480px) {
     .skill-logo-container {
-      width: 60px; /* Even smaller size for small screens */
+      width: 60px; 
       height: 60px;
       margin: 5px;
     }
     
-    /* Adjust hover effect for small screens to avoid overlap */
     .skill-logo-container:hover {
-      transform: scale(1.1); /* Slightly smaller enlargement */
+      transform: scale(1.1);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     }
     
     .skill-name {
-      bottom: -20px; /* Adjust position for smaller container */
-      font-size: 0.8em; /* Smaller font size */
+      bottom: -20px; 
+      font-size: 0.8em; 
     }
   }
+
+  @media (max-width: 768px) {
+    .work-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  
+        grid-gap: 30px;
+    }
+
+    .layer {
+        padding: 15px;  
+    }
+
+    .layer h3 {
+        font-size: 1rem; 
+    }
+
+    .layer p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-list {
+        grid-template-columns: repeat(1, 1fr);  
+        grid-gap: 20px;
+    }
+
+    .work img {
+        width: 100%;  
+        height: auto;
+    }
+
+    .layer {
+        padding: 10px; 
+    }
+
+    .layer h3 {
+        font-size: 0.9rem;
+    }
+
+    .layer p {
+        font-size: 0.8rem;
+    }
+}

@@ -257,19 +257,24 @@ section {
 
 .btn-color-3{
     margin-left: 45%;
-    margin-top: 2%;
+    margin-top: 20px;
     border: rgb(53, 53, 53) 0.1rem solid;
     font-weight: 600;
     transition: all 300ms ease-in-out;
     padding: 1rem;
     width: 10rem;
     border-radius: 2rem;
+    background-color: white;
 }
 
 .btn-color-3:hover{
     cursor: pointer;
     background: rgb(53, 53, 53);
     color: white; 
+}
+
+.btn-color-3 a:hover{
+    color: white;
 }
 
 .profile_pic_2 img{
@@ -417,6 +422,15 @@ section {
     cursor:pointer;
     height: 2rem;
 }
+
+.icon-2{
+    position: relative;
+    right: 5rem;
+    bottom: -4rem;
+    cursor:pointer;
+    height: 2rem;
+}
+
 .details-containers{
     padding: 1.5rem;
     flex: 1;
@@ -563,24 +577,24 @@ section {
     transition: transform 0.2s ease-in-out;
     text-align: center;
     position: relative;
-  }
+}
   
-  .skill-logo-container img {
+.skill-logo-container img {
     max-width: 100%;
     border-radius: 50%;
     height: auto;
     display: block;
     margin: 0 auto;
-  }
+}
 
-  .skill-logo-container:hover {
+.skill-logo-container:hover {
     transform: scale(1.2);
     box-shadow: none;
     border-radius: 50%;
     cursor: pointer;
-  }
+}
   
-  .skill-name {
+.skill-name {
     opacity: 1;
     transition: opacity 0.3s ease;
     top: 70px;
@@ -588,28 +602,104 @@ section {
     bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
-  }
+}
   
   .skill-logo-container:hover .skill-name {
     opacity: 1;
-  }
+} 
 
-  .work-list{
+.work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-gap: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 50px;
     margin-top: 100px;
-  }
+    padding: 0 20px;
+}
 
-  .work{
-    border-radius: 10px;
+.work {
     position: relative;
-    overflow: hidden;
-  }
-
-  .work img{
-    width: 80%;
-    height: 80%;
     border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.work img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
     display: block;
-  }
+    object-fit: cover;
+}
+
+.layer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color:white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    max-height: 100%; 
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.work:hover .layer {
+    opacity: 1;
+    max-height: none;
+}
+
+.layer h3 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.layer p {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.2;
+    color: white;
+    text-align: center;
+}
+
+.work:hover .layer {
+    opacity: 1;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+
+.contact-right{
+    flex-basis: 65%;
+}
+
+.contact-left p{
+    margin-top: 30px;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    padding: 16px;
+    margin: 15px 0;
+    color: black;
+    font-size: 16px;
+    border-radius: 8px;
+}

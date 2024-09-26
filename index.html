@@ -6,6 +6,7 @@
     <title>Sushith Jhenkar</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaques.css">
+
 </head>
 <body>
     <script src="script.js"></script>
@@ -49,7 +50,7 @@
             <h1 class="name_title">Sushith S Jhenkar</h1>
             <p class="section_text_p2">Software Engineer</p>
             <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/')"> Download CV</button>
+                <a style="text-decoration: none;" href="./assets/SushithResume.pdf" download class="btn btn-color-2">Download CV</a>
                 <button class="btn btn-color-1" onclick="location.href='./#contact'"> Hire Me</button>
             </div>
             <div id="socials">
@@ -131,7 +132,9 @@
             <div class="tab-contents" id="research">
                 <h2 class="section_text_about">COVI-Assist: Automatic COVID-19 Detection from Chest X-Ray Images</h2>
                 <p class="section_text_about">COVI-Assist is a machine learning model that uses deep learning techniques to detect COVID-19 from chest X-ray images. The model is trained on a large dataset of chest X-ray images and is capable of accurately identifying COVID-19 cases with high accuracy rates. This research project aims to develop a more efficient and accurate Computer aided detection system for COVID-19 using chest X-ray images.</p>
-                <button class="btn-color-3" onclick="window.open('https://www.ijraset.com/best-journal/covi-assist-automatic-covid19-detection-from-chest-xrays', '_blank')">Read More</button>
+                <button class="btn-color-3">
+                <a style="text-decoration: none;" target="_blank" href="https://www.ijraset.com/best-journal/covi-assist-automatic-covid19-detection-from-chest-xrays">Read More</a>   
+            </button>                 
             </div>
             <script> 
                 var tablinks = document.getElementsByClassName('tag-links');
@@ -196,18 +199,57 @@
             <div class="work">
                 <img src="./assets/covid19.png" alt="Work 1">
                 <div class="layer">
-                    <h3>COVID-19 Detection using Chest X-Ray</h3>
+                    <h3>COVID-19 Detection using Chest X-Ray Images</h3><br>
                     <p>Developed a machine learning model to detect COVID-19 using chest X-ray images.</p>
-                    <a href="https://github.com/Sushithjhenkar/COVID-19-Detection-using-Chest-X-Ray" target="_blank">View Project</a>
                 </div>
             </div>
             <div class="work">
                 <img src="./assets/bakery.png" alt="Work 2">
+                <div class="layer">
+                    <h3>Online Bakery Management System</h3><br>
+                    <p>Developed a scalable backend system for the entire bakery operations.</p>
+                </div>
             </div>
             <div class="work">
                 <img src="./assets/food-donation.png" alt="Work 3">
+                <div class="layer">
+                    <h3>RescueFeast - Food Donation Platform</h3><br>
+                    <p>Developed a web application for food donation and volunteer management.</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn-color-3" style="margin-top: 50px;">
+            <a style="text-decoration: none;" href="https://github.com/Sushithjhenkar" target="_blank"> See More</a>
+         </button>
+        <img src="./assets/arrow.png" alt="Arrow" class="icon-2" onclick="location.href='./#contact'">
+    </section>
+    <section id="contact">
+        <p class="section_text_p1">Say Hello</p>
+        <h1 class="name_title">Contact Me</h1>
+        <div class="row">
+            <div class="contact-left">
+                <h1 style="margin-top: 25px;">Contact Info</h1>
+                <div class="social-icons">
+                    <a  class="icon" style="text-decoration: none; margin-top: 20px; margin-bottom: 20px;" href="tel:+15612607215" target="_blank"><img src="./assets/call.png" alt="Call">&nbsp;&nbsp;+1 (561) 260-7215</a>
+                    <a class="icon" style="text-decoration: none; margin-top: 20px; margin-bottom: 20px;" href="mailto:sushithjhenkar@gmail.com" target="_blank"><img src="./assets/mail.png" alt="Email">&nbsp;&nbsp;sushithjhenkar@gmail.com</a>
+                    <a class="icon" style="text-decoration: none; margin-top: 20px; margin-bottom: 20px;" href="https://www.linkedin.com/in/sushithjhenkar/" target="_blank"><img src="./assets/linkedin.png" alt="LinkedIn">&nbsp;&nbsp;LinkedIn</a>
+                    <a class="icon" style="text-decoration: none; margin-top: 20px; margin-bottom: 20px;" href="https://github.com/Sushithjhenkar" target="_blank"><img src="./assets/github.png" alt="Github">&nbsp;&nbsp;Github</a><br>
+                    <a style="text-decoration: none;top: 50px;" href="./assets/SushithResume.pdf" download class="btn btn-color-2">Download CV</a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form action="">
+                    <h2 style="margin-top: 20px;">Let's Connect</h2>
+                    <input type="text" placeholder=" Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder=" Type your Message here..." rows="6" required></textarea>
+                    <button type="submit" class="btn btn-color-2">Send</button>
+                </form>
             </div>
         </div>
     </section>
+    <footer>
+        <p class="section_text_p1">© 2024 , Made by Yours Truly 🖤 Sushith Jhenkar</p>
+    </footer>
 </body>
 </html>
