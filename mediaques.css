@@ -7,35 +7,37 @@
     }
 }
 
-@media screen and (max-width: 600px) {
-    .experience-timeline{
-        margin: 50px auto;
-    }
-    .exp-timeline::after{
-        left:32px;
-    }
-    .exp-container{
-        width: 100%;
-        padding-left:80px;
-        padding-right: 25px;
-    }
-    .text-box{
-        font-size: 12px;
-    }
-    .text-box small{
-        margin-bottom: 10px;
-    }
-    .exp-container-right{
-        left: 0;
-    }
-    .exp-container-right, .exp-container img{
-        left:10px;
-    }
-    .left-container-arrow, .right-container-arrow{
-        border-right: 15px solid black;
-        border-left:0;
-        left: -16px;
-    }
+@media (max-width: 768px) {
+  .experience-timeline {
+      display: block;
+  }
+
+  .exp-container,
+  .exp-container-right {
+      width: 100%;
+      left: 0;
+      padding: 10px;
+  }
+
+  .exp-container img,
+  .exp-container-right img {
+      position: static;
+      margin-bottom: 10px;
+  }
+
+  .left-container-arrow,
+  .right-container-arrow {
+      display: none;
+  }
+
+  .text-box {
+      padding: 15px;
+      text-align: justify;
+  }
+
+  .experience-timeline::after {
+      left: 10px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -44,7 +46,8 @@
     }
 
     .tab-contents p.section_text_about {
-        font-size: 16px; 
+        font-size: 1.2rem; 
+        text-align: justify;
     }
 }
 
@@ -52,8 +55,10 @@
     .skill-logo-container {
       width: 80px;
       height: 80px;
+      margin-left: 10%;
+      gap: 10px;
     }
-  }
+}
   
   @media (max-width: 480px) {
     .skill-logo-container {
@@ -129,8 +134,9 @@
   }
 
   .profile_pic img, .profile_pic_2 img {
-      width: 200px;
-      height: 200px;
+      width: 300px;
+      height: 300px;
+      margin-left: 10%;
   }
 
   section {
@@ -143,15 +149,17 @@
   }
 
   .name_title {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
   }
 
   .section_text_p1, .section_text_p2 {
       font-size: 1.2rem;
+      padding-top: 10px;
   }
 
   .btn {
       width: 100%;
+      margin-left: 8%;
   }
 
   .btn-color-3 {
@@ -193,6 +201,7 @@
   .profile_pic img, .profile_pic_2 img {
       width: 300px;
       height: 300px;
+      margin-left: 10%;
   }
 
   section {
@@ -200,7 +209,7 @@
   }
 
   .name_title {
-      font-size: 3rem;
+      font-size: 2rem;
   }
 
   .section_text_p1, .section_text_p2 {
@@ -230,6 +239,7 @@
   .profile_pic img, .profile_pic_2 img {
       width: 350px;
       height: 350px;
+      margin-left: 10%;
   }
 
   section {
@@ -237,11 +247,12 @@
   }
 
   .name_title {
-      font-size: 3.5rem;
+      font-size: 3rem;
   }
 
   .section_text_p1, .section_text_p2 {
       font-size: 1.6rem;
+      margin-top: 10px;
   }
 
   .exp-container, .exp-container-right {
@@ -357,5 +368,31 @@
   }
   .text-container {
     text-align: justify;
+  }
+}
+@media (max-width: 768px) {
+  .section_text_about {
+    display: block;
+    text-align: justify;
+    justify-content: flex-start;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-left: 9%;
+  }
+}
+@media (max-width: 768px) {
+  .skill-logo-container img {
+    max-width: 80%;
+    border-radius: 50%;
+    height: auto;
+    margin: 0 auto;
+  } 
+}
+@media (max-width: 768px) {
+  .section_text_p1-footer {
+    font-size: 0.9rem;
+    text-align: center;
+    position: relative;
+    bottom: 0;
   }
 }

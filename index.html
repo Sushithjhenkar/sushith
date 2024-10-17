@@ -148,6 +148,24 @@
         </div>
     </section>
     <section id="experience">
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let experienceSection = document.querySelector('#experience');
+                let timelineLine = document.querySelector('.experience-timeline::after');
+        
+                let observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            document.querySelector('.experience-timeline').style.opacity = '1';
+                            document.querySelector('.experience-timeline').style.animation = 'moveline 4s linear forwards';
+                        }
+                    });
+                }, { threshold: 0.5 });
+        
+                observer.observe(experienceSection);
+            });
+        </script>
+        
             <p class="section_text_p1">Journey through my</p>
             <h1 class="name_title">Career</h1>
             <div class="experience-timeline">

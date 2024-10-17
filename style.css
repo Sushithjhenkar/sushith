@@ -544,10 +544,11 @@ section {
     }
 }
 
-#experience:target .experience-timeline::after {
+#experience .experience-timeline::after {
     animation: moveline 4s linear forwards;
     opacity: 1;
 }
+
 
 .left-container-arrow{
     height: 0;
@@ -621,7 +622,7 @@ section {
         width: 40px; /* Adjust size for tablets */
         height: 40px;
         margin: 20px; /* Reduce margin */
-        margin-left: 0; /* Center items on smaller screens */
+        margin-left: 10%; /* Center items on smaller screens */
     }
 
     .skill-name {
