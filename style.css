@@ -179,6 +179,13 @@ section {
     font-weight: 600;
 }
 
+.section_text_p1-footer{
+    font-size: 1rem;
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+}
+
 .section_text_p1{
     text-align: center;
 }
@@ -572,13 +579,13 @@ section {
     height: 50px;
     display: inline-flex;
     margin: 30px;
-    margin-left: 200px;
+    margin-left: 200px; /* This will be adjusted for smaller screens */
     padding-top: 10px;
     transition: transform 0.2s ease-in-out;
     text-align: center;
     position: relative;
 }
-  
+
 .skill-logo-container img {
     max-width: 100%;
     border-radius: 50%;
@@ -593,7 +600,7 @@ section {
     border-radius: 50%;
     cursor: pointer;
 }
-  
+
 .skill-name {
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -603,10 +610,39 @@ section {
     left: 50%;
     transform: translateX(-50%);
 }
-  
-  .skill-logo-container:hover .skill-name {
+
+.skill-logo-container:hover .skill-name {
     opacity: 1;
-} 
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .skill-logo-container {
+        width: 40px; /* Adjust size for tablets */
+        height: 40px;
+        margin: 20px; /* Reduce margin */
+        margin-left: 0; /* Center items on smaller screens */
+    }
+
+    .skill-name {
+        top: 100px; /* Adjust position for smaller icons */
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-logo-container {
+        width: 30px; /* Adjust size for mobile */
+        height: 30px;
+        margin: 20px; /* Further reduce margin */
+    }
+
+    .skill-name {
+        top: 90px; /* Further adjust position */
+        font-size: 0.7em; /* Smaller text on mobile */
+        display: none;
+    }
+}
+
 
 .work-list {
     display: grid;
@@ -702,4 +738,10 @@ form input, form textarea{
     color: black;
     font-size: 16px;
     border-radius: 8px;
+}
+
+#msg{
+    color: #61b752;
+    margin-top: 40px;
+    display: block;
 }
