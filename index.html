@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushith Jhenkar</title>
+    <link rel="icon" href="assets/tabicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaques.css">
+
+</head>
+<body>
+    <script src="script.js"></script>
+    <nav id="main-nav">
+        <div>
+            <ul class="nav-head">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="hamburger-menu"></div>
+        <div class="hamburger-icon" onclick="togglemenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-heads">
+            <li><a href="#" onclick="togglemenu()">Home</a></li>
+            <li><a href="#about" onclick="togglemenu()">About</a></li>
+            <li><a href="#experience" onclick="togglemenu()">Experience</a></li>
+            <li><a href="#projects" onclick="togglemenu()">Projects</a></li>
+            <li><a href="#contact" onclick="togglemenu()">Contact</a></li>
+        </div>
+    </nav>
+<section id="profile">
+        <div class="profile_pic">
+            <img src="./assets/profile.jpg" alt="Sushith S Jhenkar Profile Picture">
+        </div>
+        <div class="section_text">
+            <p class="section_text_p1">Hello, I'm</p>
+            <h1 class="name_title">Sushith S Jhenkar</h1>
+            <p class="section_text_p2">Software Engineer</p>
+            <div class="btn-container">
+                <a style="text-decoration: none;" href="./assets/SushithShivanandaJhenkar.pdf" download class="btn btn-color-2">Download CV</a>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'"> Hire Me</button>
+            </div>
+            <div id="socials">
+                <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onclick="window.open('https://www.linkedin.com/in/sushithjhenkar','_blank')">
+                <img src="./assets/github.png" alt="My Github Profile" class="icon" onclick="window.open('https://github.com/Sushithjhenkar','_blank')">
+                <img src="./assets/mail.png" alt="My Email" class="icon" onclick="window.open('mailto:sushithjhenkar@gmail.com','_blank')">
+                <a href="tel:+15612607215" target="_blank"><img src="./assets/call.png" alt="Call me" class="icon"></a>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="about-col-2">
+            <p class="section_text_p1">Get to know more</p>
+            <h1 class="name_title">About me</h1>
+            <p class="section_text_about">I am a dedicated Computer Science engineer with a strong foundation in software development and a focus on data management and integration. Known for my quick learning, problem-solving skills, and commitment to delivering high-quality results, I approach challenges with creativity, enthusiasm, and determination. Continuous learning and striving for excellence define my professional journey.</p>
+            <div class="tab-titles">
+                <img class="edu-icon" src="./assets/education.png" alt="Education">
+                <p class="tag-links active-link" onclick="opentab('education')">Education</p>
+                <img class="edu-icon" src="./assets/skills.png" alt="Skills">
+                <p class="tag-links" onclick="opentab('skills')">Skills</p>
+                <img class="edu-icon" src="./assets/research.png" alt="Research">
+                <p class="tag-links" onclick="opentab('research')">Academic Research</p>
+            </div>
+            <div class="tab-contents active-tab" id="education">
+                <p class="section_text_about" style="margin-bottom: 20px;">With a solid foundation in Computer Science and a Master’s degree at Florida Atlantic University, I'm deepening my expertise in areas like AI, NLP, DBMS, and Cloud Computing.</p>
+                <ul>
+                    <li><span><b>Florida Atlantic University</b></span><br>Masters in Computer Science
+                    <span style="display: block;">Aug 2023 - May 2025</span>
+                    <span style="display: block;">GPA: 3.83/ 4.0</span></li>
+                    <li><span><b>Visvesvaraya Technological University</b></span><br>Bachelors in Computer Science
+                    <span style="display: block;">Aug 2017 - Aug 2021 </span>
+                    <span style="display: block;">GPA: 7.82/ 10</span></li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="skills">
+                <p class="section_text_about" style="display: block; text-align: center;">These are the areas where I apply my expertise to address complex challenges</p>
+                <div class="skill-logo-container">
+                    <img src="./assets/python.png" alt="Python">
+                    <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/c-sharp.png" alt="C#">
+                    <span class="skill-name">C#</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/dotnet.png" alt=".NET">
+                    <span class="skill-name">.NET</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/api.png" alt="API Development">
+                    <span class="skill-name">API Development</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/html.png" alt="HTML">
+                    <span class="skill-name">HTML</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/css-3.png" alt="CSS">
+                    <span class="skill-name">CSS</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/java-script.png" alt="JavaScript">
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/etl.png" alt="ETL">
+                    <span class="skill-name">ETL</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/sql.png" alt="SQL">
+                    <span class="skill-name">SQL</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/gcp.png" alt="Google Cloud Platform">
+                    <span class="skill-name">GCP</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/git.png" alt="Git">
+                    <span class="skill-name">Git</span>
+                </div>
+                <div class="skill-logo-container">
+                    <img src="./assets/vs.png" alt="Visual Studio">
+                    <span class="skill-name">Visual Studio</span>
+                </div>
+            </div>
+            <div class="tab-contents" id="research">
+                <h2 class="section_text_about">COVI-Assist: Automatic COVID-19 Detection from Chest X-Ray Images</h2>
+                <p class="section_text_about">COVI-Assist is a machine learning model that uses deep learning techniques to detect COVID-19 from chest X-ray images. The model is trained on a large dataset of chest X-ray images and is capable of accurately identifying COVID-19 cases with high accuracy rates. This research project aims to develop a more efficient and accurate Computer aided detection system for COVID-19 using chest X-ray images.</p>
+                <button class="btn-color-3">
+                <a style="text-decoration: none;" target="_blank" href="https://www.ijraset.com/best-journal/covi-assist-automatic-covid19-detection-from-chest-xrays">Read More</a>   
+            </button>                 
+            </div>
+            <script> 
+                var tablinks = document.getElementsByClassName('tag-links');
+                var tabcontents = document.getElementsByClassName('tab-contents');
+                function opentab(tab){
+                for(tl of tablinks){
+                    tl.classList.remove("active-link");
+                }
+                for(tc of tabcontents){
+                    tc.classList.remove("active-tab")
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tab).classList.add("active-tab");
+                }
+            </script>
+        </div>
+    </section>
+    <section id="experience">
+          <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const experienceSection = document.querySelector('#experience');
+  const timeline = document.querySelector('.experience-timeline');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        timeline.classList.add("animate-line");
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(experienceSection);
+});
+
+  </script>
+        
+            <p class="section_text_p1">Journey through my</p>
+            <h1 class="name_title">Career</h1>
+            <div class="experience-timeline">
+                <div class="exp-container-right">
+                    <img src="./assets/tcs.jpg" alt="Tata Consultancy Services">
+                    <div class="text-box">
+                        <h2 style="padding: auto;text-align: center;">Tata Consultancy Services</h2>
+                        <h3 style="padding: 0.4rem;text-align: center;">Assistant System Engineer</h3>
+                        <small style="padding: 0.2rem;display:block;text-align:center;">Aug 2021 - May 2023</small>
+                        <ul>
+                        <li>Applied <b>Agile</b> methodologies to enhance team collaboration and facilitate the delivery of robust, high-quality software
+                            solutions. This contributed to a <b>40%</b> increase in project completion efficiency.</li>
+                        <li>Conducted comprehensive testing by examining user requirements, ensuring program functionality, and achieving a
+                            <b>98%</b> performance success rate against established targets.</li>
+                        <li>Collaborated closely with a cross-functional team of developers and business analysts to gather testing requirements
+                            and design effective test scenarios for <b>Citibank's</b> data integration within the <b>Salesforce platform</b>.</li>
+                        </ul>
+                        <span class="left-container-arrow"></span>
+                    </div>
+                </div>
+                <div class="exp-container">
+                    <img src="./assets/ic.jpg" alt="">
+                    <div class="text-box">
+                        <h2 style="padding: auto;text-align: center;">IC Solutions</h2>
+                        <h3 style="padding: 0.4rem;text-align: center;">Machine Learning Intern</h3>
+                        <small style="padding: 0.2rem;display:block;text-align:center;">Sep 2020 - Oct 2020</small>
+                        <ul>
+                        <li>Conducted exploratory <b>data analysis</b> on a dataset of <b>10,000</b> automobile records and extracted relevant information for
+                            training a regression model.</li>
+                        <li>Presented findings and model comparisons, leading to the selection of the Gradient Boosting Regression model as the
+                            best fit due to its highest R-squared value and the lowest MSE, improving price prediction accuracy by <b>20%</b>.</li>
+                        </ul>
+                        <span class="right-container-arrow"></span>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section id="projects">
+        <p class="section_text_p1">Explore my</p>
+        <h1 class="name_title">Work and Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="./assets/covid19.png" alt="Work 1">
+                <div class="layer">
+                    <h3>COVID-19 Detection using Chest X-Ray Images</h3><br>
+                    <p>Developed a machine learning model to detect COVID-19 using chest X-ray images.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="./assets/bakery.png" alt="Work 2">
+                <div class="layer">
+                    <h3>Online Bakery Management System</h3><br>
+                    <p>Developed a scalable backend system for the entire bakery operations.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="./assets/food-donation.png" alt="Work 3">
+                <div class="layer">
+                    <h3>RescueFeast - Food Donation Platform</h3><br>
+                    <p>Developed a web application for food donation and volunteer management.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="./assets/gallery.png" alt="Work 4">
+                <div class="layer">
+                    <h3>Skyview - Smart Photo Gallery in the Cloud</h3><br>
+                    <p>Developed a web application for photo gallery in the cloud with description and tags.</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn-color-3" style="margin-top: 50px;">
+            <a style="text-decoration: none;" href="https://github.com/Sushithjhenkar" target="_blank"> See More</a>
+         </button>
+    </section>
+    <section id="contact">
+        <p class="section_text_p1">Say Hello</p>
+        <h1 class="name_title">Contact Me</h1>
+        <div class="row">
+            <div class="contact-left">
+                <h1 style="margin-top: 25px;">Contact Info</h1>
+                <div class="social-icons">
+                    <a  class="icon" style="text-decoration: none; margin-top: 20px; margin-bottom: 20px;" href="tel:+15612607215" target="_blank"><img src="./assets/call.png" alt="Call">&nbsp;&nbsp;+1 (561) 260-7215</a>
+                    <a class="icon" style="text-decoration: none; margin-top: 20px; margin-bottom: 20px;" href="mailto:sushithjhenkar@gmail.com" target="_blank"><img src="./assets/mail.png" alt="Email">&nbsp;&nbsp;sushithjhenkar@gmail.com</a>
+                    <a class="icon" style="text-decoration: none; margin-top: 20px; margin-bottom: 20px;" href="https://www.linkedin.com/in/sushithjhenkar/" target="_blank"><img src="./assets/linkedin.png" alt="LinkedIn">&nbsp;&nbsp;LinkedIn</a>
+                    <a class="icon" style="text-decoration: none; margin-top: 20px; margin-bottom: 20px;" href="https://github.com/Sushithjhenkar" target="_blank"><img src="./assets/github.png" alt="Github">&nbsp;&nbsp;Github</a><br>
+                    <a style="text-decoration: none;top: 50px;" href="./assets/SushithResume.pdf" download class="btn btn-color-2">Download CV</a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <h2 style="margin-top: 20px;">Let's Connect</h2>
+                    <input name="Name" type="text" placeholder=" Your Name" required>
+                    <input name="Email" type="email" placeholder=" Your Email" required>
+                    <textarea name="Message" placeholder=" Type your Message here..." rows="6" required></textarea>
+                    <button type="submit" class="btn btn-color-2">Send</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p class="section_text_p1-footer">Thank you for Visiting</p>
+        <p class="section_text_p1-footer">© 2024 , Made by Yours Truly 🖤 Sushith Jhenkar</p>
+    </footer>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxAtli9Wy2NPgpv9qQ1RCORiK3vcBLppbanuqQKCqaHiKAiRyEfvRefuTVqiSMsuFrJ/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById('msg');
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+              msg.innerHTML = 'Message Sent!';
+              setTimeout(function() { 
+                msg.innerHTML = ''; 
+              }, 3000);
+              form.reset();
+            })
+            .catch(error => console.error('Error!', error.message));
+        });
+      </script>
+      
+</body>
+</html>
