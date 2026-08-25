@@ -3,25 +3,21 @@ const themeToggle = document.getElementById('themeToggle');
 const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
 const header = document.querySelector('.site-header');
-const glow = document.querySelector('.cursor-glow');
 
 const savedTheme = localStorage.getItem('portfolio-theme');
-if (savedTheme === 'light' || savedTheme === 'dark') {
-  root.dataset.theme = savedTheme;
-} else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-  root.dataset.theme = 'light';
-}
+if (savedTheme) root.dataset.theme = savedTheme;
+else if (window.matchMedia('(prefers-color-scheme: light)').matches) root.dataset.theme = 'light';
 
 themeToggle?.addEventListener('click', () => {
-  const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  root.dataset.theme = nextTheme;
-  localStorage.setItem('portfolio-theme', nextTheme);
+  const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+  root.dataset.theme = next;
+  localStorage.setItem('portfolio-theme', next);
 });
 
 menuBtn?.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  menuBtn.classList.toggle('open', isOpen);
-  menuBtn.setAttribute('aria-expanded', String(isOpen));
+  const open = navLinks.classList.toggle('open');
+  menuBtn.classList.toggle('open', open);
+  menuBtn.setAttribute('aria-expanded', String(open));
 });
 
 document.querySelectorAll('.nav-links a').forEach(link => {
@@ -32,24 +28,31 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 20);
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive: true });
+window.addEventListener('scroll', () => {
+  header?.classList.toggle('scrolled', window.scrollY > 20);
+});
 
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+}, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-if (window.matchMedia('(pointer: fine)').matches && glow) {
-  window.addEventListener('pointermove', event => {
-    glow.style.left = `${event.clientX}px`;
-    glow.style.top = `${event.clientY}px`;
-  }, { passive: true });
-}
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = entry.target.id;
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+    });
+  });
+}, { rootMargin: '-35% 0px -55% 0px' });
+
+document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+
+document.getElementById('year').textContent = new Date().getFullYear();
