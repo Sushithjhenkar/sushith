@@ -1,58 +1,9 @@
-const root = document.documentElement;
-const themeToggle = document.getElementById('themeToggle');
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
-const header = document.querySelector('.site-header');
-
-const savedTheme = localStorage.getItem('portfolio-theme');
-if (savedTheme) root.dataset.theme = savedTheme;
-else if (window.matchMedia('(prefers-color-scheme: light)').matches) root.dataset.theme = 'light';
-
-themeToggle?.addEventListener('click', () => {
-  const next = root.dataset.theme === 'light' ? 'dark' : 'light';
-  root.dataset.theme = next;
-  localStorage.setItem('portfolio-theme', next);
-});
-
-menuBtn?.addEventListener('click', () => {
-  const open = navLinks.classList.toggle('open');
-  menuBtn.classList.toggle('open', open);
-  menuBtn.setAttribute('aria-expanded', String(open));
-});
-
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    menuBtn?.classList.remove('open');
-    menuBtn?.setAttribute('aria-expanded', 'false');
-  });
-});
-
-window.addEventListener('scroll', () => {
-  header?.classList.toggle('scrolled', window.scrollY > 20);
-});
-
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-const sectionObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const id = entry.target.id;
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-    });
-  });
-}, { rootMargin: '-35% 0px -55% 0px' });
-
-document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
-
-document.getElementById('year').textContent = new Date().getFullYear();
+const root=document.documentElement;const themeToggle=document.getElementById('themeToggle');const explorer=document.getElementById('objectExplorer');const collapseExplorer=document.getElementById('collapseExplorer');const executeBtn=document.getElementById('executeBtn');const treeItems=[...document.querySelectorAll('.tree-item')];const queryTabs=[...document.querySelectorAll('.query-tab')];
+const savedTheme=localStorage.getItem('portfolio-theme');if(savedTheme)root.dataset.theme=savedTheme;
+themeToggle?.addEventListener('click',()=>{const next=root.dataset.theme==='light'?'dark':'light';root.dataset.theme=next;localStorage.setItem('portfolio-theme',next)});
+collapseExplorer?.addEventListener('click',()=>explorer?.classList.toggle('open'));
+if(window.innerWidth<=900){const toolbar=document.querySelector('.toolbar');const explorerBtn=document.createElement('button');explorerBtn.className='tool-btn';explorerBtn.textContent='Object Explorer';explorerBtn.addEventListener('click',()=>explorer?.classList.toggle('open'));toolbar?.prepend(explorerBtn)}
+treeItems.forEach(item=>item.addEventListener('click',()=>{treeItems.forEach(x=>x.classList.remove('active'));item.classList.add('active');if(window.innerWidth<=900)explorer?.classList.remove('open')}));
+queryTabs.forEach(tab=>tab.addEventListener('click',()=>{queryTabs.forEach(x=>x.classList.remove('active'));tab.classList.add('active');document.getElementById(tab.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'})}));
+executeBtn?.addEventListener('click',()=>{executeBtn.innerHTML='<span>✓</span> Executed';executeBtn.classList.add('executed');setTimeout(()=>{executeBtn.innerHTML='<span>▶</span> Execute';executeBtn.classList.remove('executed')},1200)});
+const sections=[...document.querySelectorAll('main section[id]')];const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;const id=entry.target.id;treeItems.forEach(item=>item.classList.toggle('active',item.getAttribute('href')===`#${id}`));queryTabs.forEach(tab=>tab.classList.toggle('active',tab.dataset.target===id))})},{rootMargin:'-30% 0px -60% 0px'});sections.forEach(section=>observer.observe(section));
