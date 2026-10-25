@@ -253,15 +253,8 @@
   $("reset").addEventListener("click", resetLab);
   resetLab();
 
-  // Start the intro on load, then reveal the hero SQL typing immediately.
-  const bootOverlay = $("intro-overlay");
-  if (reducedMotion) {
-    bootOverlay?.classList.add("done");
-    playHeroQuery();
-  } else {
-    window.setTimeout(() => {
-      bootOverlay?.classList.add("done");
-      playHeroQuery();
-    }, 560);
-  }
+  // Start in the first viewport on initial load; no intro screen obscures the typing.
+  $("intro-overlay")?.classList.add("done");
+  if (reducedMotion) playHeroQuery();
+  else window.setTimeout(playHeroQuery, 290);
 })();
