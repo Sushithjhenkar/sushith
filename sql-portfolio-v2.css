@@ -417,3 +417,38 @@ body, .nav-links, .footer, .work-card, .window, .hero-console { -webkit-font-smo
 @media(max-width:900px){.toolkit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.toolkit-feature{grid-column:1/-1}.toolkit-feature-body{grid-template-columns:1fr;gap:25px}.toolkit-card:last-child{grid-column:1/-1}.toolkit-card{min-height:335px}}
 @media(max-width:600px){.toolkit-grid{grid-template-columns:1fr}.toolkit-card,.toolkit-feature{grid-column:1/-1;min-height:0;padding:25px}.toolkit-card{padding-bottom:29px}.toolkit-card-head{margin-bottom:17px}.toolkit-feature h3{font-size:38px}.toolkit-glyph{height:61px}.toolkit-visual{padding:16px}.toolkit-flow-node{width:67px;height:65px}.toolkit-flow-node strong{font-size:9px}.toolkit-flow-track{gap:3px}.toolkit-flow-track i{width:4px;height:4px}.toolkit-card p{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.motion-section .toolkit-card{opacity:1;transform:none;filter:none;transition:none}.toolkit-flow-track i,.toolkit-indicator i{animation:none}.toolkit-card:hover{transform:none}}
+
+/* INTRODUCTION / EXECUTION PLAN — explanatory, animated, deliberately not a benchmark */
+.execution-plan{position:relative;overflow:hidden;background:#0c0b0f;border:1px solid #554765;border-radius:18px;box-shadow:0 28px 88px #0009,0 0 85px #b9a4ff08}
+.plan-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:54px;padding:0 24px;background:#1a1520;border-bottom:1px solid #3b3045;color:#94889f;font:500 11px "JetBrains Mono",monospace}
+.plan-toolbar-left,.plan-toolbar-right{display:flex;align-items:center;gap:19px}.plan-tab-active{height:54px;display:inline-flex;align-items:center;border-bottom:2px solid #c8b2ff;color:#f0e8ff}.plan-tab{color:#85798e}.plan-toolbar-right{gap:9px;font-size:9px;letter-spacing:.07em}.plan-live-dot,.plan-status-dot{width:7px;height:7px;display:inline-block;border-radius:50%;background:#bda6ff;box-shadow:0 0 16px #bda6ff88}.plan-separator{color:#5a5062}
+.plan-overview{display:flex;justify-content:space-between;align-items:flex-end;gap:25px;padding:42px 42px 25px;background:radial-gradient(ellipse at 95% 5%,#ad86ff12,transparent 55%)}
+.plan-eyebrow{color:#b9a6df;letter-spacing:.07em;font:500 11px "JetBrains Mono",monospace}
+.plan-overview h2{max-width:690px;font-size:clamp(31px,4vw,54px);font-weight:650;line-height:1.13;letter-spacing:-.055em;margin:18px 0 12px}
+.plan-overview p{max-width:640px;font-size:14px;line-height:1.8;color:#a8a0b0;margin:0}
+.plan-status{display:flex;align-items:center;gap:9px;flex:none;border:1px solid #4b3a60;background:#21172d80;color:#cbb7f5;padding:10px 12px;border-radius:30px;font:500 9px "JetBrains Mono",monospace;white-space:nowrap}
+.plan-scroll{width:100%;overflow-x:auto;padding:22px 32px 49px;scrollbar-color:#625273 #141018}
+.plan-operator-graph{display:flex;align-items:stretch;gap:0;min-width:820px;max-width:1140px;margin:auto}
+.ep-node{flex:1;min-width:0;position:relative;display:flex;flex-direction:column;align-items:flex-start;min-height:238px;padding:19px 16px;background:linear-gradient(154deg,#21192a,#131017 77%);border:1px solid #473951;border-radius:12px;opacity:0;transform:translate3d(0,28px,0);filter:blur(6px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1),filter .7s,border-color .3s,box-shadow .35s}
+.execution-plan.is-visible .ep-node{opacity:1;transform:none;filter:none;transition-delay:calc(var(--step)*.2s)}
+.ep-node:hover{border-color:#b496e6;box-shadow:0 16px 38px #af90ec13}
+.ep-node-heading{width:100%;display:flex;justify-content:space-between;gap:4px;align-items:center;font:500 9px "JetBrains Mono",monospace;color:#b8a4d9;letter-spacing:.03em}
+.ep-cost{color:#85778e;font-size:8px}
+.ep-glyph{height:78px;display:flex;align-items:center;color:#c6adff;font-size:44px;line-height:1;font-family:"JetBrains Mono",monospace;text-shadow:0 0 26px #bca3ff43}
+.ep-mini-arrow{font-size:25px;margin-left:-7px}
+.ep-node h3{font-size:19px;letter-spacing:-.035em;line-height:1.1;margin:0 0 8px;color:#f1ebfb}
+.ep-node p{font-size:12px;color:#a99eb4;line-height:1.55;margin:0}
+.ep-node-foot{margin-top:auto;padding-top:21px;font:500 9px "JetBrains Mono",monospace;color:#937fa9;letter-spacing:.04em}
+.ep-connector{flex:0 0 36px;display:flex;align-items:center;justify-content:center;color:#cdb4ff;position:relative;opacity:0;transition:opacity .5s}
+.execution-plan.is-visible .ep-connector{opacity:1;transition-delay:calc(var(--step)*.2s + .4s)}
+.ep-connector-line{position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,#6b557e,#ceb1ff,#655176);background-size:200% auto;animation:ep-flow 2.8s linear infinite}
+.ep-connector i{font-size:27px;font-style:normal;position:relative;z-index:1;background:#111018;padding-left:3px;transform:translateX(10px);color:#d7bfff}
+@keyframes ep-flow{to{background-position:-200% center}}
+.plan-footer{display:flex;justify-content:space-between;align-items:center;gap:25px;min-height:67px;padding:15px 28px;border-top:1px solid #302838;background:#130f18;font:500 10px/1.65 "JetBrains Mono",monospace;color:#b7a6cc}
+.plan-terminal-prompt{color:#d2bbff;margin-right:7px}
+.plan-footer-note{color:#81768c;text-align:right;font-size:9px}
+.motion-section .execution-plan{opacity:0;transform:translate3d(0,45px,0);filter:blur(9px);transition:opacity .85s cubic-bezier(.2,.8,.2,1),transform .85s cubic-bezier(.2,.8,.2,1),filter .85s}
+.motion-section .execution-plan.is-visible{opacity:1;transform:none;filter:none}
+@media(max-width:850px){.plan-overview{padding:32px 24px 20px;align-items:flex-start;flex-direction:column}.plan-scroll{padding:20px 22px 32px}.plan-toolbar-right{display:none}.plan-footer{flex-direction:column;align-items:flex-start;gap:7px}.plan-footer-note{text-align:left}.plan-status{align-self:flex-start}}
+@media(max-width:550px){.plan-overview{padding:28px 20px 15px}.plan-overview h2{font-size:34px}.plan-overview p{font-size:13px}.plan-scroll{padding:18px 16px 28px}.plan-operator-graph{min-width:770px}.ep-connector{flex-basis:27px}.plan-footer{padding:15px 18px}.plan-footer-note{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.execution-plan .ep-node,.execution-plan .ep-connector,.motion-section .execution-plan{opacity:1;transform:none;filter:none;transition:none}.ep-connector-line{animation:none}}

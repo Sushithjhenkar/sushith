@@ -85,14 +85,6 @@
       resultValue: "Transaction processing · Billing · Integrations"
     }
   ];
-  const profileParts = [
-    ["comment", "-- Who is Sushith?\n"],
-    ["keyword", "SELECT"], ["plain", " DeveloperName, Specialization,\n       PrimaryStack, Status\n"],
-    ["keyword", "FROM"], ["plain", " dbo.Engineers\n"],
-    ["keyword", "WHERE"], ["plain", " DeveloperName = "],
-    ["string", "'Sushith Jhenkar'"], ["plain", ";"]
-  ];
-
   // Text nodes inside token spans keep partially typed SQL valid and syntax-highlighted.
   async function typeSql(element, parts, isCurrent) {
     if (!element) return false;
@@ -187,62 +179,9 @@
   }
   replay?.addEventListener("click", () => playHeroQuery());
 
-  // Secondary full-size workbench also types instead of showing a static code block.
-  let profileSequence = 0;
-  let startedProfile = false;
-  let profileResultSequence = 0;
-  const introQuery = $("intro-query");
-  const runProfile = $("run-profile");
-  async function executeProfile() {
-    const sequence = ++profileResultSequence;
-    runProfile.disabled = true;
-    $("profile-message").textContent = "Executing simulated query…";
-    $("profile-time").textContent = "RUNNING";
-    $("profile-results").innerHTML = '<tr><td colspan="5" class="empty">Loading simulated result set…</td></tr>';
-    await delay(350);
-    if (sequence !== profileResultSequence) return;
-    $("profile-results").innerHTML = '<tr><td>1</td><td>Sushith Jhenkar</td><td>SQL Server / Backend Engineer</td><td>T-SQL · C# · .NET</td><td class="success">ACTIVE</td></tr>';
-    $("profile-message").textContent = "(1 row returned) · Demo data · Query completed successfully";
-    $("profile-time").textContent = "SUCCESS";
-    runProfile.disabled = false;
-  }
-  async function startProfileQuery() {
-    if (startedProfile) return;
-    startedProfile = true;
-    const sequence = ++profileSequence;
-    const ok = await typeSql(introQuery, profileParts, () => sequence === profileSequence);
-    if (ok) executeProfile();
-  }
-  if (introQuery) {
-    introQuery.classList.remove("typewriter-target");
-    introQuery.textContent = "";
-    if (reducedMotion || !("IntersectionObserver" in window)) {
-      startProfileQuery();
-    } else {
-      const profileObserver = new IntersectionObserver((entries) => {
-        if (entries.some(entry => entry.isIntersecting)) {
-          profileObserver.disconnect();
-          startProfileQuery();
-        }
-      }, { threshold: 0.2 });
-      profileObserver.observe(document.querySelector("#about .window"));
-    }
-  }
-  runProfile.addEventListener("click", () => {
-    if (!startedProfile) startProfileQuery();
-    executeProfile();
-  });
-  document.addEventListener("keydown", (event) => {
-    if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-      event.preventDefault();
-      if (!startedProfile) startProfileQuery();
-      executeProfile();
-    }
-  });
-
   // Intersection-observer reveals are GPU-friendly: opacity and transform only.
   const revealElements = document.querySelectorAll(
-    ".motion-section .section-label,.motion-section .heading,.motion-section .subheading,.motion-section .window,.motion-section .intro-columns,.motion-section .career-row,.motion-section .work-card,.motion-section .plan-panel,.motion-section .inline-note,.motion-section .info-panel,.motion-section .edu,.motion-section .pipeline > div,.motion-section .contact-social,.motion-section .commit,.motion-section .toolkit-card,.motion-section .contact-email"
+    ".motion-section .section-label,.motion-section .heading,.motion-section .subheading,.motion-section .execution-plan,.motion-section .intro-columns,.motion-section .career-row,.motion-section .work-card,.motion-section .plan-panel,.motion-section .inline-note,.motion-section .info-panel,.motion-section .edu,.motion-section .pipeline > div,.motion-section .contact-social,.motion-section .commit,.motion-section .toolkit-card,.motion-section .contact-email"
   );
   if (reducedMotion || !("IntersectionObserver" in window)) {
     revealElements.forEach((el) => el.classList.add("is-visible"));
