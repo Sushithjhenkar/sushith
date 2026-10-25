@@ -141,9 +141,10 @@
     const sequence = ++heroSequence;
     const current = () => sequence === heroSequence;
     let index = 0;
+    let pass = 0;
     while (current()) {
       const data = heroQueries[index];
-      if (!reducedMotion && index !== 0) {
+      if (!reducedMotion && pass > 0) {
         heroQuery.classList.add("cycle-out");
         heroResult.classList.add("cycle-out");
         await delay(390);
@@ -181,6 +182,7 @@
       await delay(2700);
       if (!current()) return;
       index = (index + 1) % heroQueries.length;
+      pass++;
     }
   }
   replay?.addEventListener("click", () => playHeroQuery());
