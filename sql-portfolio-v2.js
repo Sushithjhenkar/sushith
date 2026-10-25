@@ -242,7 +242,7 @@
 
   // Intersection-observer reveals are GPU-friendly: opacity and transform only.
   const revealElements = document.querySelectorAll(
-    ".motion-section .section-label,.motion-section .heading,.motion-section .subheading,.motion-section .window,.motion-section .intro-columns,.motion-section .career-row,.motion-section .work-card,.motion-section .plan-panel,.motion-section .inline-note,.motion-section .info-panel,.motion-section .edu,.motion-section .pipeline > div,.motion-section .contact-social,.motion-section .commit,.motion-section .stack-row,.motion-section .contact-email"
+    ".motion-section .section-label,.motion-section .heading,.motion-section .subheading,.motion-section .window,.motion-section .intro-columns,.motion-section .career-row,.motion-section .work-card,.motion-section .plan-panel,.motion-section .inline-note,.motion-section .info-panel,.motion-section .edu,.motion-section .pipeline > div,.motion-section .contact-social,.motion-section .commit,.motion-section .toolkit-card,.motion-section .contact-email"
   );
   if (reducedMotion || !("IntersectionObserver" in window)) {
     revealElements.forEach((el) => el.classList.add("is-visible"));

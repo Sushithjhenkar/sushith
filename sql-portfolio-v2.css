@@ -365,3 +365,55 @@ body, .nav-links, .footer, .work-card, .window, .hero-console { -webkit-font-smo
 @media(prefers-reduced-motion:reduce) {
   .work-card img[src$="-visual.svg"] { transition: none; }
 }
+
+/* Visual engineering toolkit — intentionally database-first, not a flat list */
+.toolkit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:45px}
+.toolkit-card{position:relative;isolation:isolate;display:flex;flex-direction:column;min-width:0;min-height:365px;overflow:hidden;padding:30px;background:linear-gradient(145deg,#151119 0%,#0d0b0f 75%);border:1px solid #393040;border-radius:18px;transition:border-color .4s,box-shadow .5s,transform .65s cubic-bezier(.2,.8,.2,1)}
+.toolkit-card:hover{border-color:#9b7bd286;box-shadow:0 25px 72px #a58bf610;transform:translateY(-7px)}
+.toolkit-card::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 82% 6%,#bca3ff16,transparent 53%);opacity:0;transition:opacity .5s}
+.toolkit-card:hover::before{opacity:1}
+.toolkit-feature{grid-column:1/-1;min-height:380px;padding:31px 34px;background:radial-gradient(ellipse at 73% 25%,#a788fd13,transparent 45%),linear-gradient(115deg,#19121e,#0c0b0e 76%);border-color:#59496c}
+.toolkit-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:25px}
+.toolkit-index,.toolkit-indicator,.toolkit-corner,.toolkit-visual-label,.toolkit-flow-node,.toolkit-console{font-family:"JetBrains Mono",monospace}
+.toolkit-index{color:#aea0c4;font-size:10px;letter-spacing:.07em}
+.toolkit-indicator{font-size:9px;color:#cbb6ff;letter-spacing:.05em}
+.toolkit-indicator i{display:inline-block;width:6px;height:6px;margin-right:5px;border-radius:50%;background:#c4aaff;box-shadow:0 0 15px #c4aaff99;animation:toolkit-pulse 2.3s infinite}
+.toolkit-corner{font-size:24px;color:#a08eb7;transition:transform .35s,color .35s}
+.toolkit-card:hover .toolkit-corner{color:#d1bdff;transform:rotate(45deg)}
+.toolkit-feature-body{display:grid;grid-template-columns:1fr minmax(330px,.95fr);gap:40px;align-items:center}
+.toolkit-card h3{font-size:clamp(24px,2.6vw,37px);line-height:1.17;letter-spacing:-.055em;margin:8px 0 14px}
+.toolkit-card h3 span{color:#ba9ffa}
+.toolkit-feature h3{font-size:clamp(38px,4vw,54px);max-width:520px}
+.toolkit-card p{color:#a9a1b1;line-height:1.8;font-size:14px;margin:0 0 25px}
+.toolkit-feature p{max-width:390px}
+.toolkit-symbol{font-size:46px;line-height:1;color:#bca3ff;text-shadow:0 0 28px #ba9fff5a}
+.toolkit-glyph{height:83px;display:flex;align-items:center;color:#baa4ed;font-size:46px;font-weight:500;letter-spacing:-.12em}
+.toolkit-glyph-code{letter-spacing:-.07em;font:500 35px "JetBrains Mono",monospace}
+.toolkit-glyph-tools{font-size:52px}
+.toolkit-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.toolkit-tags span{display:inline-flex;align-items:center;border:1px solid #4b3e59;border-radius:7px;padding:8px 11px;color:#d6ccdf;font:500 11px "JetBrains Mono",monospace;background:#ffffff06;transition:color .35s,background .35s,border-color .35s,transform .35s}
+.toolkit-tags span:hover{color:#fff;background:#bda3ff18;border-color:#b9a3ff8c;transform:translateY(-3px)}
+.toolkit-visual{padding:22px;border:1px solid #483b56;background:#0c0a10d9;border-radius:14px;overflow:hidden;box-shadow:0 18px 50px #0006}
+.toolkit-visual-label{display:flex;justify-content:space-between;gap:10px;color:#a598b5;font-size:10px;margin-bottom:29px}
+.toolkit-signal{color:#bfa7ff}
+.toolkit-data-flow{display:flex;align-items:center;gap:7px;justify-content:space-between}
+.toolkit-flow-node{flex:0 0 auto;width:82px;height:76px;display:flex;flex-direction:column;justify-content:center;gap:7px;align-items:center;border:1px solid #5d4c73;border-radius:9px;background:#1a1321;transition:border-color .4s,transform .4s,box-shadow .4s}
+.toolkit-flow-node span{font-size:10px;color:#a38eba}
+.toolkit-flow-node strong{font-size:10px;color:#e9ddff}
+.toolkit-card:hover .toolkit-flow-node{border-color:#b79be798;box-shadow:0 0 21px #bd9cff0e}
+.toolkit-flow-track{flex:1;display:flex;gap:7px;justify-content:space-evenly;min-width:25px}
+.toolkit-flow-track i{width:5px;height:5px;background:#a98bed;border-radius:50%;opacity:.3;animation:toolkit-travel 1.9s infinite}
+.toolkit-flow-track i:nth-child(2){animation-delay:.22s}
+.toolkit-flow-track i:nth-child(3){animation-delay:.44s}
+.toolkit-console{border-top:1px solid #3f334b;margin-top:28px;padding-top:20px;color:#beb2cb;font-size:11px;line-height:2}
+.toolkit-code-keyword{color:#cbb2ff}
+.toolkit-code-comment{color:#8f839e}
+.motion-section .toolkit-card{opacity:0;transform:translate3d(0,42px,0);filter:blur(8px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1),filter .8s,border-color .4s,box-shadow .4s}
+.motion-section .toolkit-card.is-visible{opacity:1;transform:translate3d(0,0,0);filter:none}
+.motion-section .toolkit-card:nth-child(3){transition-delay:.09s}
+.motion-section .toolkit-card:nth-child(4){transition-delay:.18s}
+@keyframes toolkit-travel{0%,100%{opacity:.2;transform:translateX(-5px)}50%{opacity:1;transform:translateX(5px);box-shadow:0 0 14px #bca3ff}}
+@keyframes toolkit-pulse{50%{opacity:.5;box-shadow:0 0 3px #c4aaff}}
+@media(max-width:900px){.toolkit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.toolkit-feature{grid-column:1/-1}.toolkit-feature-body{grid-template-columns:1fr;gap:25px}.toolkit-card:last-child{grid-column:1/-1}.toolkit-card{min-height:335px}}
+@media(max-width:600px){.toolkit-grid{grid-template-columns:1fr}.toolkit-card,.toolkit-feature{grid-column:1/-1;min-height:0;padding:25px}.toolkit-card{padding-bottom:29px}.toolkit-card-head{margin-bottom:17px}.toolkit-feature h3{font-size:38px}.toolkit-glyph{height:61px}.toolkit-visual{padding:16px}.toolkit-flow-node{width:67px;height:65px}.toolkit-flow-node strong{font-size:9px}.toolkit-flow-track{gap:3px}.toolkit-flow-track i{width:4px;height:4px}.toolkit-card p{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.motion-section .toolkit-card{opacity:1;transform:none;filter:none;transition:none}.toolkit-flow-track i,.toolkit-indicator i{animation:none}.toolkit-card:hover{transform:none}}
