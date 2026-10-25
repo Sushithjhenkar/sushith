@@ -173,7 +173,7 @@
 
   // Intersection-observer reveals are GPU-friendly: opacity and transform only.
   const revealElements = document.querySelectorAll(
-    ".motion-section .section-label,.motion-section .heading,.motion-section .subheading,.motion-section .window,.motion-section .intro-columns,.motion-section .career-row,.motion-section .work-card,.motion-section .plan-panel,.motion-section .stack-row,.motion-section .contact-email"
+    ".motion-section .section-label,.motion-section .heading,.motion-section .subheading,.motion-section .window,.motion-section .intro-columns,.motion-section .career-row,.motion-section .work-card,.motion-section .plan-panel,.motion-section .quote-main,.motion-section .quote-tile,.motion-section .stack-row,.motion-section .contact-email"
   );
   if (reducedMotion || !("IntersectionObserver" in window)) {
     revealElements.forEach((el) => el.classList.add("is-visible"));
@@ -206,52 +206,6 @@
     }
     requestAnimationFrame(paintSpotlight);
   }
-
-  // Interactive scan vs seek: intentionally illustrative, NOT actual SQL Server I/O metrics.
-  const pages = $("pages");
-  let labSequence = 0;
-  function resetLab() {
-    ++labSequence;
-    pages.replaceChildren();
-    for (let n = 1; n <= 24; n++) {
-      const page = document.createElement("div");
-      page.className = "page";
-      page.textContent = String(n).padStart(2, "0");
-      pages.append(page);
-    }
-    $("reads").textContent = "0";
-    $("operator").textContent = "—";
-    $("found").textContent = "—";
-    $("lab-status").textContent = "READY";
-    $("scan").disabled = false;
-    $("seek").disabled = false;
-  }
-  async function runLab(mode) {
-    resetLab();
-    const sequence = labSequence;
-    $("scan").disabled = true;
-    $("seek").disabled = true;
-    $("operator").textContent = mode === "scan" ? "SCAN" : "SEEK";
-    $("lab-status").textContent = "RUNNING";
-    const steps = mode === "scan" ? Array.from({ length: 17 }, (_, index) => index) : [3, 11, 16];
-    for (let i = 0; i < steps.length; i++) {
-      if (sequence !== labSequence) return;
-      pages.children[steps[i]].classList.add("read");
-      $("reads").textContent = String(i + 1);
-      await delay(mode === "scan" ? 85 : 340);
-    }
-    if (sequence !== labSequence) return;
-    pages.children[16].classList.remove("read");
-    pages.children[16].classList.add("found");
-    $("found").textContent = "ID 17";
-    $("lab-status").textContent = "COMPLETE";
-    $("scan").disabled = false;
-    $("seek").disabled = false;
-  }
-  $("scan").addEventListener("click", () => runLab("scan"));
-  $("seek").addEventListener("click", () => runLab("seek"));
-  $("reset").addEventListener("click", resetLab);
-  resetLab();
 
   // Start in the first viewport on initial load; no intro screen obscures the typing.
   $("intro-overlay")?.classList.add("done");
