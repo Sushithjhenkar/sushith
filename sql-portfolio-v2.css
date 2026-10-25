@@ -49,7 +49,7 @@ body, .nav-links, .footer, .work-card, .window, .hero-console { -webkit-font-smo
 .scroll-progress { background: linear-gradient(90deg, #977cff, #e9bcff); }
 
 /* The visible, on-load code experience */
-.hero-console { position: relative; z-index: 2; isolation: isolate; min-width: 0; overflow: hidden; background: linear-gradient(153deg, #151218, #090909 60%); border: 1px solid #4b4058; border-radius: 17px; box-shadow: 0 30px 100px #0009, 0 0 90px #9980ff0c; transform: translateZ(0); animation: consoleEnter 1.1s .3s both; }
+.hero-console { animation: consoleEnter .72s .07s both; position: relative; z-index: 2; isolation: isolate; min-width: 0; overflow: hidden; background: linear-gradient(153deg, #151218, #090909 60%); border: 1px solid #4b4058; border-radius: 17px; box-shadow: 0 30px 100px #0009, 0 0 90px #9980ff0c; transform: translateZ(0); animation: consoleEnter 1.1s .3s both; }
 .hero-console:before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 90% 0%, #b8a3ff14, transparent 55%); }
 .console-head { display: flex; align-items: center; gap: 12px; padding: 15px 18px; border-bottom: 1px solid #332e3c; background: #141117; color: #d2cbdc; font-size: 11px; }
 .console-dots { display: flex; gap: 5px; }
@@ -106,7 +106,7 @@ body, .nav-links, .footer, .work-card, .window, .hero-console { -webkit-font-smo
 .hero .fade { color: #89838f; }
 .boot-text { color: #cab9ff; }
 .boot-bar i { background: #baa7ff; }
-.intro-overlay { background: #050505; }
+.intro-overlay { display: none; }
 .section-label::after { background: linear-gradient(90deg,#b9a4ff,#ffffff1c 38%,transparent); }
 .mini-label, .section-label > span:first-child, .stack-row > span { color: #bca9ff; }
 .section-label .right { color: #81798a; }
