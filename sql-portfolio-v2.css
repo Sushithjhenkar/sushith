@@ -165,3 +165,145 @@ body, .nav-links, .footer, .work-card, .window, .hero-console { -webkit-font-smo
   #about .window::before { animation: none !important; display: none; }
   .hero-copy { translate: none !important; opacity: 1 !important; }
 }
+/* SQL reflections: a typography-led alternative to the removed interactive demo. */
+.quotes-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(290px, .65fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.quote-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 520px;
+  padding: clamp(32px, 5.2vw, 70px);
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(circle at 90% 13%, #ac8cff19, transparent 43%), #100e13;
+  border: 1px solid #3d3449;
+  border-radius: 18px;
+}
+.quote-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .3;
+  pointer-events: none;
+  background-image: linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(90deg,transparent 10%,black 100%);
+}
+.quote-topline,
+.quote-footline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font: 500 10px/1.7 "JetBrains Mono",monospace;
+  letter-spacing: .06em;
+  color: #aaa0b7;
+}
+.quote-topline > span:first-child { color: #bba8f5; }
+.quote-mark {
+  display: block;
+  font: 700 clamp(85px,11vw,160px)/.7 Georgia,serif;
+  color: #bca7ff;
+  opacity: .8;
+  margin: 62px 0 18px -10px;
+}
+.quote-headline {
+  max-width: 730px;
+  margin: 0;
+  font: 600 clamp(30px,3.5vw,53px)/1.26 Inter,system-ui,sans-serif;
+  letter-spacing: -.05em;
+  text-wrap: balance;
+}
+.quote-headline em {
+  color: #c9b7ff;
+  font-style: normal;
+}
+.quote-explainer {
+  margin: 22px 0 54px;
+  color: #aaa2af;
+  font: 400 15px/1.8 Inter,system-ui,sans-serif;
+}
+.quote-footline {
+  padding-top: 19px;
+  border-top: 1px solid #403748;
+  margin-top: auto;
+}
+.quote-notes { display: grid; grid-template-rows: 1fr 1fr; gap: 18px; }
+.quote-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 0;
+  min-height: 251px;
+  padding: clamp(25px,3.3vw,39px);
+  background: #131115;
+  border: 1px solid #36303d;
+  border-radius: 18px;
+  transition: border-color .4s ease,background .4s ease,box-shadow .4s ease;
+}
+.quote-tile:hover {
+  border-color: #a58bd577;
+  background: #18141c;
+  box-shadow: 0 14px 60px #a78bfa0c;
+}
+.quote-comment,
+.quote-index {
+  font: 500 10px/1.5 "JetBrains Mono",monospace;
+  color: #b5a4d8;
+  letter-spacing: .06em;
+}
+.quote-tile p {
+  font: 500 clamp(22px,2.2vw,30px)/1.4 Inter,system-ui,sans-serif;
+  letter-spacing: -.045em;
+  margin: 0;
+  color: #f5f1fa;
+  text-wrap: balance;
+}
+.quote-index { color: #817889; }
+.motion-section .quote-main,
+.motion-section .quote-tile {
+  opacity: 0;
+  transform: translate3d(0,44px,0);
+  filter: blur(8px);
+  transition: opacity .95s cubic-bezier(.2,.8,.2,1), transform .95s cubic-bezier(.2,.8,.2,1), filter .95s cubic-bezier(.2,.8,.2,1);
+}
+.motion-section .quote-tile:nth-child(2) { transition-delay: .12s; }
+.motion-section .quote-main.is-visible,
+.motion-section .quote-tile.is-visible {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+  filter: blur(0);
+}
+@media (max-width: 850px) {
+  .quotes-layout { grid-template-columns: 1fr; }
+  .quote-main { min-height: 430px; }
+  .quote-mark { margin: 38px 0 13px -8px; }
+  .quote-notes { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+  .quote-tile { min-height: 250px; }
+}
+@media (max-width: 580px) {
+  .quote-main { padding: 30px 24px; min-height: 420px; }
+  .quote-topline,.quote-footline { font-size: 8px; }
+  .quote-footline { flex-wrap: wrap; }
+  .quote-headline { font-size: clamp(29px,7vw,40px); }
+  .quote-explainer { font-size: 14px; margin-bottom: 42px; }
+  .quote-notes { grid-template-columns: 1fr; }
+  .quote-tile { min-height: 205px; padding: 27px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-section .quote-main,.motion-section .quote-tile {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
